@@ -1,0 +1,21 @@
+<resources>
+    <!-- Margins and paddings -->
+    <dimen name="main_padding">8dp</dimen>
+    <dimen name="headline_margin_top">16dp</dimen>
+    <dimen name="headine_margin_bottom">16dp</dimen>
+    <dimen name="teams_layout_margin_bottom">64dp</dimen>
+    <dimen name="team_margin_bottom">16dp</dimen>
+    <dimen name="set_margin_bottom">112dp</dimen>
+    <dimen name="score_button_margin_bottom">16dp</dimen>
+    <dimen name="reset_button_margin_bottom">16dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="headline_text">24sp</dimen>
+    <dimen name="team_text">24sp</dimen>
+    <dimen name="score_text">32sp</dimen>
+    <dimen name="set_text">28sp</dimen>
+    <dimen name="reset_button_text">24sp</dimen>
+
+    <!-- Button sizes -->
+    <dimen name="reset_button_width">240dp</dimen>
+</resources>
