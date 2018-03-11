@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/badmintoncourt_land">
+
+    <!-- Headline -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/headine_margin_bottom"
+        android:layout_marginTop="@dimen/headline_margin_top"
+        android:fontFamily="@font/bowlbyonesc"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/headline_color"
+        android:textSize="@dimen/headline_text" />
+
+    <!-- Teams layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/land_team_layout_height"
+        android:layout_marginBottom="@dimen/land_teams_layout_margin_bottom"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <!-- Team A's layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/team_a"
+                android:textAlignment="center"
+                android:textColor="@color/light_text_color"
+                android:textSize="@dimen/team_text" />
+
+            <!-- Team A's score -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Points A layout -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/score_background_color"
+                    android:layout_margin="@dimen/score_margins"
+                    android:layout_weight="1">
+
+                    <!-- Team A Points view -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/score"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/point_text" />
+
+                    <TextView
+                        android:id="@+id/team_a_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/initial_score"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/land_point_number" />
+
+                </LinearLayout><!-- Points A layout -->
+
+                <!-- Games A layout -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/score_background_color"
+                    android:layout_margin="@dimen/score_margins"
+                    android:layout_weight="1">
+
+                    <!-- Team A Games view -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/set"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/land_games_text" />
+
+                    <TextView
+                        android:id="@+id/team_a_set"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/initial_score"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/land_games_number" />
+
+                </LinearLayout><!-- Set A layout -->
+
+            </LinearLayout><!-- Team A's score -->
+
+            <!-- Team A's buttons view -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Team A Point button -->
+                <Button
+                    android:id="@+id/point_a_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main_button_color"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="setScoreA"
+                    android:text="@string/point_button"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="@dimen/land_button_text"
+                    android:layout_margin="@dimen/land_buttons_margin"
+                    android:layout_weight="1"/>
+
+                <!-- Team A Game button -->
+                <Button
+                    android:id="@+id/game_a_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main_button_color"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="setSetA"
+                    android:text="@string/game_button"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="@dimen/land_button_text"
+                    android:layout_margin="@dimen/land_buttons_margin"
+                    android:layout_weight="1"/>
+
+            </LinearLayout><!-- Team A's buttons view -->
+
+        </LinearLayout><!-- Team A's layout -->
+
+        <!-- Divider -->
+        <View
+            android:layout_width="@dimen/land_divider_width"
+            android:layout_height="match_parent"
+            android:background="@color/score_background_color">
+        </View>
+
+        <!-- Team B's layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/team_b"
+                android:textAlignment="center"
+                android:textColor="@color/light_text_color"
+                android:textSize="@dimen/team_text" />
+
+
+            <!-- Team B's score -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Score B layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/score_background_color"
+                    android:layout_margin="@dimen/score_margins"
+                    android:layout_weight="1">
+
+                    <!-- Team B Points view -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/score"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/point_text" />
+
+                    <TextView
+                        android:id="@+id/team_b_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/initial_score"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/land_point_number" />
+
+                </LinearLayout><!-- Score B layout -->
+
+                <!-- Game B layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/score_background_color"
+                    android:layout_margin="@dimen/score_margins"
+                    android:layout_weight="1">
+
+                    <!-- Team B Game view -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/set"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/land_games_text" />
+
+                    <TextView
+                        android:id="@+id/team_b_set"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/initial_score"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_text_color"
+                        android:textSize="@dimen/land_games_number" />
+
+                </LinearLayout><!-- Game B layout -->
+
+            </LinearLayout><!-- Team B's score -->
+
+            <!-- Team B's buttons view -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Team B Points button -->
+                <Button
+                    android:id="@+id/point_b_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main_button_color"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="setScoreB"
+                    android:text="@string/point_button"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="@dimen/land_button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/land_buttons_margin"/>
+
+                <!-- Team B Games button -->
+                <Button
+                    android:id="@+id/game_b_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/main_button_color"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="setSetB"
+                    android:text="@string/game_button"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="@dimen/land_button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/land_buttons_margin" />
+
+            </LinearLayout><!-- Team B's buttons view -->
+
+        </LinearLayout><!-- Team B's layout -->
+
+    </LinearLayout><!-- Teams layout -->
+
+    <!-- Game Won message -->
+    <TextView
+        android:id="@+id/game_won_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/land_win_message_text"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/win_message_text"
+        android:background="@color/score_background_color"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/land_win_message_margin_bottom"/>
+
+    <!-- Match Won message -->
+    <TextView
+        android:id="@+id/match_won_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/land_win_message_text"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/win_message_text"
+        android:background="@color/score_background_color"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/land_win_message_margin_bottom"/>
+
+    <!-- Reset button -->
+    <Button
+        android:layout_width="@dimen/reset_button_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/main_button_color"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="reset"
+        android:text="@string/reset_button"
+        android:textColor="@color/light_text_color"
+        android:textSize="@dimen/reset_button_text" />
+
+</LinearLayout>
