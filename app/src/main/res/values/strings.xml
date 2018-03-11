@@ -7,6 +7,12 @@
     <string name="set">Games</string>
     <string name="initial_score">0</string>
 
+    <!-- Win messages -->
+    <string name="team_a_won_game">Team A won the game!</string>
+    <string name="team_b_won_game">Team B won the game!</string>
+    <string name="team_a_won_match">The winner is Team A!</string>
+    <string name="team_b_won_match">The winner is Team B!</string>
+
     <!-- Buttons -->
     <string name="point_button">Point</string>
     <string name="game_button">Game</string>

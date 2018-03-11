@@ -10,6 +10,7 @@
     <color name="headline_color">#88ffffff</color>
     <color name="light_text_color">#ddd</color>
     <color name="disabled_button_text">#888</color>
+    <color name="win_message_text">#f00</color>
 
     <!-- Button colors -->
     <color name="main_button_color">#009</color>

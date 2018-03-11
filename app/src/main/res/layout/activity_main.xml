@@ -244,6 +244,34 @@
 
     </LinearLayout><!-- Teams layout -->
 
+    <!-- Game Won message -->
+    <TextView
+        android:id="@+id/game_won_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/win_message_text"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/win_message_text"
+        android:background="@color/score_background_color"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/win_message_margin_bottom"/>
+
+    <!-- Match Won message -->
+    <TextView
+        android:id="@+id/match_won_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/win_message_text"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/win_message_text"
+        android:background="@color/score_background_color"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/win_message_margin_bottom"/>
+
     <!-- Reset button -->
     <Button
         android:layout_width="@dimen/reset_button_width"

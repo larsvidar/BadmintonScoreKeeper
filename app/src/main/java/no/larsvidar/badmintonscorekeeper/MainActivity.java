@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     TextView teamAGamesView;
     TextView teamBPointsView;
     TextView teamBGamesView;
+    TextView gameWonMessage;
+    TextView matchWonMessage;
 
 
     /********** METHODS **********/
@@ -71,6 +73,38 @@ public class MainActivity extends AppCompatActivity {
         button.setTextColor(getResources().getColor(R.color.light_text_color));
     }
 
+    private void showGameWinner(String team) {
+        teamAPointButton.setVisibility(View.GONE);
+        teamBPointButton.setVisibility(View.GONE);
+        if (team.equals("A")) {
+            gameWonMessage.setText(R.string.team_a_won_game);
+        } else {
+            gameWonMessage.setText(R.string.team_b_won_game);
+        }
+        gameWonMessage.setVisibility(View.VISIBLE);
+    }
+
+    private void showMatchWinner(String team) {
+        teamAPointButton.setVisibility(View.GONE);
+        teamBPointButton.setVisibility(View.GONE);
+        teamAGameButton.setVisibility(View.GONE);
+        teamBGameButton.setVisibility(View.GONE);
+        if (team.equals("A")) {
+            matchWonMessage.setText(R.string.team_a_won_match);
+        } else {
+            matchWonMessage.setText(R.string.team_b_won_match);
+        }
+        matchWonMessage.setVisibility(View.VISIBLE);
+    }
+
+    private void hideWinner(TextView message) {
+        teamAPointButton.setVisibility(View.VISIBLE);
+        teamBPointButton.setVisibility(View.VISIBLE);
+        teamAGameButton.setVisibility(View.VISIBLE);
+        teamBGameButton.setVisibility(View.VISIBLE);
+        message.setVisibility(View.GONE);
+    }
+
 
     /********** BUTTON EVENTS **********/
 
@@ -82,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
         if (teamAPoints >= 21 && teamAPoints > teamBPoints + 1) {
             disableButton(teamAPointButton);
             enableButton(teamAGameButton);
-        } else {
+            showGameWinner("A");
+            } else {
             enableButton(teamAPointButton);
             disableButton(teamAGameButton);
         }
@@ -97,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         if (teamBPoints >= 21 && teamBPoints > teamAPoints + 1) {
             disableButton(teamBPointButton);
             enableButton(teamBGameButton);
+            showGameWinner("B");
         } else {
             enableButton(teamBPointButton);
             disableButton(teamBGameButton);
@@ -111,7 +147,11 @@ public class MainActivity extends AppCompatActivity {
         teamAGames++;
         setScoreToZero();
         setButtonsToDefault();
+        hideWinner(gameWonMessage);
         updateScore();
+        if (teamAGames > 1) {
+            showMatchWinner("A");
+        }
     }
 
     /**
@@ -121,7 +161,11 @@ public class MainActivity extends AppCompatActivity {
         teamBGames++;
         setScoreToZero();
         setButtonsToDefault();
+        hideWinner(gameWonMessage);
         updateScore();
+        if (teamBGames > 1) {
+            showMatchWinner("B");
+        }
     }
 
     /**
@@ -132,11 +176,14 @@ public class MainActivity extends AppCompatActivity {
         teamBGames = 0;
         setScoreToZero();
         setButtonsToDefault();
+        hideWinner(matchWonMessage);
+        hideWinner(gameWonMessage);
         updateScore();
     }
 
+
     /**
-     * onCreate function
+     * onCreate method
      * @param savedInstanceState
      */
     @Override
@@ -154,8 +201,12 @@ public class MainActivity extends AppCompatActivity {
         teamAGamesView = findViewById(R.id.team_a_set);
         teamBPointsView = findViewById(R.id.team_b_score);
         teamBGamesView = findViewById(R.id.team_b_set);
+        gameWonMessage = findViewById(R.id.game_won_message);
+        matchWonMessage = findViewById(R.id.match_won_message);
 
         //set buttons to default states
         setButtonsToDefault();
+        hideWinner(matchWonMessage);
+        hideWinner(gameWonMessage);
     }
 }
