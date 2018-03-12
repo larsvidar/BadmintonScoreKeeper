@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method for disabeling buttons.
+     * Method for disabling buttons.
      *
      * @param button to be disabled.
      */
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method for enabeling buttons.
+     * Method for enabling buttons.
      *
      * @param button to be enabled.
      */
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         //Removing point-buttons while message is showing.
         teamAPointButton.setVisibility(View.GONE);
         teamBPointButton.setVisibility(View.GONE);
-        //CHecking which team won.
+        //Checking which team won.
         if (team.equals("A")) {
             gameWonMessage.setText(R.string.team_a_won_game);
         } else {
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method for incresing sets for Team A
+     * Method for increasing sets for Team A
      */
     public void setGameA(View view) {
         //Adding a game to Team A.
@@ -242,8 +242,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onCreate method
-     *
-     * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

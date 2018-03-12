@@ -121,7 +121,6 @@
                 <!-- Team A Point button -->
                 <Button
                     android:id="@+id/point_a_button"
-                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/land_buttons_margin"
@@ -136,7 +135,6 @@
                 <!-- Team A Game button -->
                 <Button
                     android:id="@+id/game_a_button"
-                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/land_buttons_margin"
@@ -157,8 +155,6 @@
             android:layout_width="@dimen/land_divider_width"
             android:layout_height="match_parent"
             android:background="@color/score_background_color">
-
-            <TextView />
         </View>
 
         <!-- Team B's layout -->
@@ -259,7 +255,6 @@
                 <!-- Team B Points button -->
                 <Button
                     android:id="@+id/point_b_button"
-                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/land_buttons_margin"
@@ -274,7 +269,6 @@
                 <!-- Team B Games button -->
                 <Button
                     android:id="@+id/game_b_button"
-                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
