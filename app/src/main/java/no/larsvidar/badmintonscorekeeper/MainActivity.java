@@ -2,6 +2,7 @@ package no.larsvidar.badmintonscorekeeper;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,21 +11,21 @@ public class MainActivity extends AppCompatActivity {
 
     /********** VARIABLES **********/
     //Score variables
-    int teamAPoints = 0;
-    int teamBPoints = 0;
-    int teamAGames = 0;
-    int teamBGames = 0;
-    //View variables
-    Button teamAPointButton;
-    Button teamBPointButton;
-    Button teamAGameButton;
-    Button teamBGameButton;
-    TextView teamAPointsView;
-    TextView teamAGamesView;
-    TextView teamBPointsView;
-    TextView teamBGamesView;
-    TextView gameWonMessage;
-    TextView matchWonMessage;
+    private int teamAPoints = 0;
+    private int teamBPoints = 0;
+    private int teamAGames = 0;
+    private int teamBGames = 0;
+    //View elements
+    private Button teamAPointButton;
+    private Button teamBPointButton;
+    private Button teamAGameButton;
+    private Button teamBGameButton;
+    private TextView teamAPointsView;
+    private TextView teamAGamesView;
+    private TextView teamBPointsView;
+    private TextView teamBGamesView;
+    private TextView gameWonMessage;
+    private TextView matchWonMessage;
 
 
     /********** METHODS **********/
@@ -61,18 +62,30 @@ public class MainActivity extends AppCompatActivity {
         disableButton(teamBGameButton);
     }
 
+    /**
+     * Method for disabeling buttons.
+     * @param button to be disabled.
+     */
     private void disableButton(Button button) {
         button.setEnabled(false);
         button.setBackgroundColor(getResources().getColor(R.color.main_button_disabled_color));
         button.setTextColor(getResources().getColor(R.color.disabled_button_text));
     }
 
+    /**
+     * Method for enabeling buttons.
+     * @param button to be enabled.
+     */
     private void enableButton(Button button) {
         button.setEnabled(true);
         button.setBackgroundColor(getResources().getColor(R.color.main_button_color));
         button.setTextColor(getResources().getColor(R.color.light_text_color));
     }
 
+    /**
+     * Method for showing Game Won message.
+     * @param team that won the game.
+     */
     private void showGameWinner(String team) {
         teamAPointButton.setVisibility(View.GONE);
         teamBPointButton.setVisibility(View.GONE);
@@ -84,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
         gameWonMessage.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Method for displaying Match Won message.
+     * @param team that won the match.
+     */
     private void showMatchWinner(String team) {
         teamAPointButton.setVisibility(View.GONE);
         teamBPointButton.setVisibility(View.GONE);
@@ -97,6 +114,10 @@ public class MainActivity extends AppCompatActivity {
         matchWonMessage.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Method for hiding game or match winning message.
+     * @param message to be hidden.
+     */
     private void hideWinner(TextView message) {
         teamAPointButton.setVisibility(View.VISIBLE);
         teamBPointButton.setVisibility(View.VISIBLE);
@@ -105,6 +126,18 @@ public class MainActivity extends AppCompatActivity {
         message.setVisibility(View.GONE);
     }
 
+    /**
+     * Method for saving state when screen is rotated.
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("savedTeamAPoints", teamAPoints);
+        outState.putInt("savedTeamBPoints", teamBPoints);
+        outState.putInt("savedTeamAGames", teamAGames);
+        outState.putInt("savedTeamBGames", teamBGames);
+
+        super.onSaveInstanceState(outState);
+    }
 
     /********** BUTTON EVENTS **********/
 
@@ -143,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method for incresing sets for Team A
      */
-    public void setSetA(View view) {
+    public void setGameA(View view) {
         teamAGames++;
         setScoreToZero();
         setButtonsToDefault();
@@ -157,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method for increasing sets for Team B
      */
-    public void setSetB(View view) {
+    public void setGameB(View view) {
         teamBGames++;
         setScoreToZero();
         setButtonsToDefault();
@@ -206,7 +239,20 @@ public class MainActivity extends AppCompatActivity {
 
         //set buttons to default states
         setButtonsToDefault();
-        hideWinner(matchWonMessage);
-        hideWinner(gameWonMessage);
+
+        //Get saved state after screen rotation
+        if (savedInstanceState != null) {
+            teamAGames = savedInstanceState.getInt("savedTeamAGames") - 1;
+            teamBGames = savedInstanceState.getInt("savedTeamBGames") -1;
+            teamAGameButton.performClick();
+            teamBGameButton.performClick();
+
+            teamAPoints = savedInstanceState.getInt("savedTeamAPoints") - 1;
+            teamBPoints = savedInstanceState.getInt("savedTeamBPoints") - 1;
+            teamAPointButton.performClick();
+            teamBPointButton.performClick();
+
+            savedInstanceState.clear();
+        }
     }
 }

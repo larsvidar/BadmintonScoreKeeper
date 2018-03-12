@@ -128,7 +128,7 @@
                 android:layout_gravity="center"
                 android:background="@color/main_button_color"
                 android:fontFamily="sans-serif-medium"
-                android:onClick="setSetA"
+                android:onClick="setGameA"
                 android:text="@string/game_button"
                 android:textColor="@color/light_text_color"
                 android:textSize="@dimen/game_button_text" />
@@ -235,7 +235,7 @@
                 android:layout_gravity="center"
                 android:background="@color/main_button_color"
                 android:fontFamily="sans-serif-medium"
-                android:onClick="setSetB"
+                android:onClick="setGameB"
                 android:text="@string/game_button"
                 android:textColor="@color/light_text_color"
                 android:textSize="@dimen/game_button_text"/>
